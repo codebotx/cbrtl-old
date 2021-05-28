@@ -4,9 +4,7 @@ title: "Hello world!"
 date: "2019-03-09"
 description: "Introducing cbrtl to the world"
 tags: ["general", "community"]
-hideMeta: true
-searchHidden: true 
-ShowBreadCrumbs: false 
+ShowBreadCrumbs: true 
 ---
 
 # What is cbrtl?
@@ -95,5 +93,5 @@ is also regular software that we tend to take for granted which can be (and has 
 
 ## Showcasing your project
 
-We will add some community guidelines for this part in particular, which will be linked here once it's authored.
+[This](https://cbrtl.github.io/posts/project-showcase/) post has something to say about project showcases, so you can go read up on that.
 If you want to showcase your project on our github org, then reach out to us on discord or the mailing list :)

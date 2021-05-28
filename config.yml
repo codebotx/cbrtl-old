@@ -1,4 +1,6 @@
-title: cbrtl 
+baseURL: https://cbrtl.github.io
+
+title: cbrtl
 paginate: 5
 theme: PaperMod
 
@@ -42,8 +44,7 @@ outputs:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: "A foundry for programmers who like making stufff :)"
-  author: Theme PaperMod
-  # author: ["Me", "You"] # multiple authors
+  author: Srijan Paul 
 
   defaultTheme: auto
   # disableThemeToggle: true
@@ -56,14 +57,14 @@ params:
   ShowCodeCopyButtons: true
   ShowToc: true
   # comments: false
-  images: ["papermod-cover.png"]
+  images: ["papermod-cover.png", "assets/icon.ico"]
 
   profileMode:
-    enabled: false 
-    title: cbrtl 
-    subtitle: A foundry for programmers 
+    enabled: false
+    title: cbrtl
+    subtitle: A foundry for programmers
     imageUrl: "https://avatars.githubusercontent.com/u/84934672?s=400&u=2dcad8144be1e67691c4bc7423ff87d1148d06cb&v=4"
-    imageTitle: cbrtl 
+    imageTitle: cbrtl
     # imageWidth: 120
     # imageHeight: 120
     buttons:
@@ -75,16 +76,16 @@ params:
   homeInfoParams:
     Title: "cbrtl"
     Content: >
-      cbrtl is a small, tight knit group of programmers and open source sorcerers to craft fun projects together
-      and build a community.
+      cbrtl is a small, tight knit group of programmers and open source sorcerers who like 
+      to craft fun projects together and build a community.
 
       - We are primarily a [Github Origanization](https://github.com/cbrtl).
 
   socialIcons:
     - name: github
       url: "https://github.com/cbrtl"
-    - name: discord 
-      url: "https://ko-fi.com/adityatelange"
+    - name: discord
+      url: "https://discord.gg/3qry3u569v"
     - name: RsS
       url: "index.xml"
 
@@ -102,10 +103,10 @@ params:
   #     google:
   #         SiteVerificationTag: "XYZabc"
 
-  # assets:
-  #     favicon: "<link / abs url>"
+  assets:
+    favicon: icon.ico
   #     favicon16x16: "<link / abs url>"
-  #     favicon32x32: "<link / abs url>"
+    favicon32x32: icon.ico 
   #     apple_touch_icon: "<link / abs url>"
   #     safari_pinned_tab: "<link / abs url>"
 
