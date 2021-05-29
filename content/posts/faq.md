@@ -1,7 +1,7 @@
 ---
 author: "srijan_"
 title: "FAQ"
-date: "2019-03-09"
+date: "2021-04-28"
 description: "Before you ask..."
 tags: ["faq", "community"]
 ShowBreadCrumbs: true 
@@ -57,6 +57,7 @@ Even 1 and 3 are optional.
 ### Where do I join?
 
 As mentioned earlier,  you can join the [Discord](https://discord.gg/3qry3u569v) and the [GitHub organization](https://github.com/cbrtl).
+More info on [Getting started with cbrtl and Open Source](/).
 
 ### Is there anything I can do to help?
 

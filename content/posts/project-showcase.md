@@ -1,7 +1,7 @@
 ---
 author: "srijan_"
 title: "Showcasing your project on cbrtl"
-date: "2019-03-09"
+date: "2021-04-28"
 description: "Some things to keep in mind while adding your project"
 tags: ["guidelines", "community"]
 ShowBreadCrumbs: true 
