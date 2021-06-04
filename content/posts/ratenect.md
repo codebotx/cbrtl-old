@@ -14,7 +14,7 @@ India has over [3.2 million](https://www.icnl.org/resources/civic-freedom-monito
 
 Considering the vast impact and significance of the sector, it becomes very important to tackle the challenges present here as well as to improve and increase its accessibility. 
 
-We have noticed to major problems in this sector:
+We have noticed two major problems in this sector:
   - The credibility of NGOs is a major concern for fund donors especially Government and Corporate Institutions.
   - No easy way exists for the general public to find reliable local NGOs and volunteer for them.
 
