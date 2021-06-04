@@ -37,7 +37,7 @@ That should be done by the time you're done reading this article ;)
 # Getting the most out of it
 The way you grow and shape your journey into Open Source is dictated by your level of engagement with people, and participation
 in projects, discussions and the like. 
-Now thenm, how do you define "engagement" and "participation"?
+Now then, how do you define "engagement" and "participation"?
 It can mean different things for different people, but the recurring ideas are the same.
 
 ## Ways to participate
