@@ -61,5 +61,4 @@ There shall be two platforms - Web and Mobile. For both the platforms we shall h
   - **Frontend**: Flutter
   - **Backend**: Same as above
 
-Repository Link here:
-
+A repo link will be provided once available :) 
