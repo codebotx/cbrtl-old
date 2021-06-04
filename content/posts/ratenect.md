@@ -6,9 +6,11 @@ description: "Connecting Help and Transparency"
 tags: ["project", "community"]
 ShowBreadCrumbs: true 
 ---
+> **NOTE**: This is a project being developed by [Ankur Khandelwal](https://github.com/Ankur-Khandelwal)
+
 ![logo](/assets/logo.png)
 
-India has over <a href="https://www.icnl.org/resources/civic-freedom-monitor/india#:~:text=The%20Central%20Statistical%20Institute%20of,certified%20NGOs%20on%20its%20portal." target="_blank">3.2 million</a> registered <a href="https://en.wikipedia.org/wiki/Non-governmental_organization" target="_blank">NGOs</a> (Non-Governmental Organisations) across its territory. The voluntary sector has always played an important role in supporting the government as a partner in nation-building and is heavily funded by the government as well as by private institutions. In 2018 only, companies contributed US$1 Billion to <a href="https://www.india-briefing.com/news/corporate-social-responsibility-india-5511.html/" target="_blank">CSR</a> initiatives, according to a survey. 
+India has over [3.2 million](https://www.icnl.org/resources/civic-freedom-monitor/india#:~:text=The%20Central%20Statistical%20Institute%20of,certified%20NGOs%20on%20its%20portal.) registered [NGOs](https://en.wikipedia.org/wiki/Non-governmental_organization) (Non-Governmental Organisations) across its territory. The voluntary sector has always played an important role in supporting the government as a partner in nation-building and is heavily funded by the government as well as by private institutions. In 2018 only, companies contributed US$1 Billion to [CSR](https://www.india-briefing.com/news/corporate-social-responsibility-india-5511.html) initiatives, according to a survey. 
 
 Considering the vast impact and significance of the sector, it becomes very important to tackle the challenges present here as well as to improve and increase its accessibility. 
 
