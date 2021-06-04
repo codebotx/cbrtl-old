@@ -6,10 +6,11 @@ As we grow, we expect more people to show up with interesting events and project
 ## Building the site.
 To build and run the site, follow theses steps:
 1. Clone the repo with `git clone https://github.com/cbrtl/cbrtl-site.git`.
-2. Download Hugo, you don't need to know how to use it. The download instructions for hugo are available [here](https://gohugo.io/getting-started/quick-start/).
-3. Make sure Hugo is added to your system variables in PATH.
-4. Come back to root folder of this repo, and do run `hugo server -D`
-5. The site is now live at `localhost:1313`
+2. Install the submodules using `git submodule init` and `git submodule update`.
+3. Download Hugo, you don't need to know how to use it. The download instructions for hugo are available [here](https://gohugo.io/getting-started/quick-start/).
+4. Make sure Hugo is added to your system variables in PATH.
+5. Come back to root folder of this repo, and do run `hugo server -D`
+6. The site is now live at `localhost:1313`
 
 ## Adding a blog post of your own.
 Every member of cbrtl is free (and encouraged) to submit a blog post. The steps for doing so are pretty simple.
