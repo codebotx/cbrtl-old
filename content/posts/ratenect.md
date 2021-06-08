@@ -6,7 +6,7 @@ description: "Connecting Help and Transparency"
 tags: ["project", "community"]
 ShowBreadCrumbs: true 
 ---
-> **NOTE**: This is a project being developed by [Ankur Khandelwal](https://github.com/Ankur-Khandelwal)
+> **NOTE**: This project is being maintained by [Ankur Khandelwal](https://github.com/Ankur-Khandelwal)
 
 ![logo](/assets/logo.png)
 
