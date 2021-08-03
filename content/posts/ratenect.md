@@ -61,4 +61,6 @@ There shall be two platforms - Web and Mobile. For both the platforms we shall h
   - **Frontend**: Flutter
   - **Backend**: Same as above
 
-A repo link will be provided once available :) 
+### Link to the repositories:
+- **Backend**:  https://github.com/cbrtl/ratenect-backend 
+- **Frontend**: https://github.com/cbrtl/ratenect-frontend 
