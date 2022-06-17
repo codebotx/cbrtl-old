@@ -1,8 +1,8 @@
 baseURL: https://cbrtl.github.io
 
 title: cbrtl
-paginate: 5
-theme: PaperMod
+paginate: 7
+theme: papermod
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
