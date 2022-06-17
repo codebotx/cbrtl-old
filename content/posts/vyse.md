@@ -1,6 +1,6 @@
 ---
 author: "Srijan Paul"
-title: "snap"
+title: "vyse"
 date: "2022-06-15"
 description: "Connecting Help and Transparency"
 tags: ["project", "community"]
