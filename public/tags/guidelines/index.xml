@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>guidelines on cbrtl</title>
+    <link>https://cbrtl.github.io/tags/guidelines/</link>
+    <description>Recent content in guidelines on cbrtl</description>
+    <image>
+      <url>https://cbrtl.github.io/papermod-cover.png</url>
+      <link>https://cbrtl.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cbrtl.github.io/tags/guidelines/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Showcasing your project on cbrtl</title>
+      <link>https://cbrtl.github.io/posts/project-showcase/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cbrtl.github.io/posts/project-showcase/</guid>
+      <description>Some things to keep in mind while adding your project</description>
+    </item>
+    
+  </channel>
+</rss>
