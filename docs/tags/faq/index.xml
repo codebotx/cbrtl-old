@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>faq on cbrtl</title>
     <link>https://cbrtl.github.io/tags/faq/</link>
     <description>Recent content in faq on cbrtl</description>
+    <image>
+      <url>https://cbrtl.github.io/papermod-cover.png</url>
+      <link>https://cbrtl.github.io/papermod-cover.png</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cbrtl.github.io/tags/faq/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -12,10 +16,7 @@
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://cbrtl.github.io/posts/faq/</guid>
-      <description>Why the weird name? It comes from the C stdlib function cbrtl.
-But why does the C standard library have these weird names?
-Well there is a little bit of trivia to it, in older versions of ANSI C, only the first 6 characters of an identifier were considered in the compiler. So most standard library functions in C have odd names like strstr, strtod, alloca and so on&amp;hellip;
-Oh, and also because every other GitHub organization name was taken&amp;hellip;</description>
+      <description>Before you ask...</description>
     </item>
     
   </channel>

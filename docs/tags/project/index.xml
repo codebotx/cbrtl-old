@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>project on cbrtl</title>
     <link>https://cbrtl.github.io/tags/project/</link>
     <description>Recent content in project on cbrtl</description>
+    <image>
+      <url>https://cbrtl.github.io/papermod-cover.png</url>
+      <link>https://cbrtl.github.io/papermod-cover.png</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 15 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cbrtl.github.io/tags/project/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -12,9 +16,7 @@
       <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://cbrtl.github.io/posts/vyse/</guid>
-      <description>Vyse VyseAn elegant and embeddable programming languageVisit the language spec »Website »Report Bug•Request FeatureCI Status [MIT License](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-Vyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games. Programmers familiar with Lua/Javascript can pick up the language within an hour. Vyse also comes with a C++ API for frictionless embedding in projects.
-Table of Contents Vyse Table of Contents Goal Overview Roadmap Implementation Lexing / Tokenizing (Source string -&amp;gt; Token) Compiling (Tokens -&amp;gt; Bytecode) VyVM Building Benchmarks Tests Editor-Support Development Goal Vyse aims to pick up after the Lua programming language, by adding popularly desired features on top of it, whilst providing similar speed and minimalism as Lua.</description>
+      <description>Vyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games.</description>
     </item>
     
     <item>
@@ -23,9 +25,7 @@ Table of Contents Vyse Table of Contents Goal Overview Roadmap Implementation Le
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://cbrtl.github.io/posts/ratenect/</guid>
-      <description>NOTE: This project is being maintained by Ankur Khandelwal
-India has over 3.2 million registered NGOs (Non-Governmental Organisations) across its territory. The voluntary sector has always played an important role in supporting the government as a partner in nation-building and is heavily funded by the government as well as by private institutions. In 2018 only, companies contributed US$1 Billion to CSR initiatives, according to a survey.
-Considering the vast impact and significance of the sector, it becomes very important to tackle the challenges present here as well as to improve and increase its accessibility.</description>
+      <description>Connecting Help and Transparency</description>
     </item>
     
   </channel>
