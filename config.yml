@@ -2,7 +2,7 @@ baseURL: https://cbrtl.github.io
 
 title: cbrtl
 paginate: 7
-theme: papermodx2
+theme: papermodxmod
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
