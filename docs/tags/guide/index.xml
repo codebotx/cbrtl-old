@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>guide on cbrtl</title>
     <link>https://cbrtl.github.io/tags/guide/</link>
     <description>Recent content in guide on cbrtl</description>
-    <image>
-      <url>https://cbrtl.github.io/papermod-cover.png</url>
-      <link>https://cbrtl.github.io/papermod-cover.png</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 27 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cbrtl.github.io/tags/guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -16,7 +12,8 @@
       <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://cbrtl.github.io/posts/getting-started/</guid>
-      <description>Grinding your gears</description>
+      <description>So you read up on open source, read up on cbrtl and want to start hacking. There are some preliminaries that you should take care of first. I will list them in order:
+Create a GitHub account. Set up git on your local computer. If you&amp;rsquo;re on windows, download GitBash and follow the install instructions. Get a personal test repo set up and try out commands like push, commit, pull etc.</description>
     </item>
     
   </channel>
