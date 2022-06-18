@@ -1,7 +1,7 @@
 ---
 author: "srijan_"
 title: "Getting started with cbrtl and FOSS"
-date: "2021-04-29"
+date: "2021-04-27"
 description: "Grinding your gears"
 tags: ["guide", "community"]
 ShowBreadCrumbs: true 
