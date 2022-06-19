@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>vyse | cbrtl</title>
-<meta name="keywords" content="project, community" />
-<meta name="description" content="Connecting Help and Transparency">
+<meta name="keywords" content="project, community">
+<meta name="description" content="Vyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games.">
 <meta name="author" content="Srijan Paul">
-<link rel="canonical" href="https://cbrtl.github.io/posts/vyse/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.2d6dbfc6e0f8a1db1c9d082a76dc11d094328cf63f247bbc2421dfaa7f2bb170.css" integrity="sha256-LW2/xuD4odscnQgqdtwR0JQyjPY/JHu8JCHfqn8rsXA=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.2840b7fccd34145847db71a290569594bdbdb00047097f75d6495d162f5d7dff.js" integrity="sha256-KEC3/M00FFhH23GikFaVlL29sABHCX911kldFi9dff8="
+<link rel="canonical" href="https://cbrtl.github.io/posts/vyse/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css" integrity="sha256-C3OaLixeVlbkvNXwsiaNBjrdr4HYnsOYfWr48E3s3Jc=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://cbrtl.github.io/icon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://cbrtl.github.io/favicon-16x16.png">
@@ -20,9 +20,44 @@
 <link rel="mask-icon" href="https://cbrtl.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.100.2" />
-<meta property="og:title" content="vyse" />
-<meta property="og:description" content="Connecting Help and Transparency" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="vyse" />
+<meta property="og:description" content="Vyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cbrtl.github.io/posts/vyse/" /><meta property="og:image" content="https://cbrtl.github.io/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-15T00:00:00&#43;00:00" />
@@ -32,7 +67,7 @@
 <meta name="twitter:image" content="https://cbrtl.github.io/papermod-cover.png"/>
 
 <meta name="twitter:title" content="vyse"/>
-<meta name="twitter:description" content="Connecting Help and Transparency"/>
+<meta name="twitter:description" content="Vyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games."/>
 
 
 <script type="application/ld+json">
@@ -61,12 +96,12 @@
   "@type": "BlogPosting",
   "headline": "vyse",
   "name": "vyse",
-  "description": "Connecting Help and Transparency",
+  "description": "Vyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games.",
   "keywords": [
     "project", "community"
   ],
-  "articleBody": "Vyse Vyse\rAn elegant and embeddable programming language\rVisit the language spec »\rWebsite »\rReport Bug\r•\rRequest Feature\rVyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games. Programmers familiar with Lua/Javascript can pick up the language within an hour. Vyse also comes with a C++ API for frictionless embedding in projects.\nTable of Contents Vyse Table of Contents Goal Overview Roadmap Implementation Lexing / Tokenizing (Source string -\u003e Token) Compiling (Tokens -\u003e Bytecode) VyVM Building Benchmarks Tests Editor-Support Development Goal Vyse aims to pick up after the Lua programming language, by adding popularly desired features on top of it, whilst providing similar speed and minimalism as Lua. There exist some quirks in Lua that Vyse aims to change.\nVariables are global by default\nLong keywords like local and the use of do .. end to designate blocks instead of {} makes it unlikeable to programmers coming from C.\nThe concept of metatables and metamethods is somewhat unintuitive to new programmers.\nTables being used as both arrays and maps can have unwanted side effects.\nLacks many features that are common in other languages such as :\nCompound assignment operators (+=, -=, *=) and decrement and increment operators (++, --) . continue statement for skipping over some loop iterations. switch statements. Arrays starting at 1 is a a minor issue to some.\nVyse aims to keep most of what Lua provides, but address the aforementioned issues and offer the following QoL feautures:\nA Familiar syntax for programmers migrating from Javascript and C An easy to integrate C++ API for easy embedding in applications Syntactic sugar for JS like OOP that boils down to the very same metatable and metamethod heirarchy. Overview Here is a rough overview of the language’s syntax and features:\n-- importing modules is done with the builtin 'import' function const math = import(\"math\") -- variable declaration and assignment const PI = math.pi -- variables declared with const are immutable let radius = 10 -- Function declaration fn calculate_area(r) { return PI * r ** 2 -- '**' operator is used for exponentiation. } let area = calculate_area(radius) -- function calling -- constructing objects is very similar to Javascript. let goblin = { name: \"Bobo\", health: 12, damage: 4, attack(target) { target.health -= this.damage print(\"Goblin attacks!\") }, }; -- methods is done with the `:` operator. let wolf = { health: 20 } goblin:attack(wolf) -- Arrays are intuitive too let numbers = [1, 3, 5, 7, 9] -- the '#' operator returns length of lists or strings. print('I have ' .. #numbers .. 'numbers!') // '..' is the concat operator -- the `\u003c\u003c\u003c` operator can be used to push to arrays numbers \u003c\u003c\u003c 10 \u003c\u003c\u003c 11 -- looping is very similar to lua. for i = 1, #numbers { print(numbers[i]) } -- conditionals math.randseed(time.now()); const number = math.random(0, 100); let guess = input():to_number(); -- read user input and parse as a number while true { if guess \u003c number { print(\"Too low! Try higher\") } else if guess \u003e number { print(\"Too hight! Guess lower\") } else { print(\"You guessed it! The number was \" .. number); break } } For a more complete spec of the language, and all it’s features visit manual.md. Alternatively, read the documentation on this page.\nRoadmap Currently, vyse supports basic control flow, variable declaration, usage and basic collection data structures. To move towards a more complete implementation, the following tasks have to be attended to:\nImplement parent tables (metatables in Lua). (DONE) Add a complete list of collection types (Arrays and tables). (DONE) Implement proper error reporting in all the passes. (DONE) Full support for Lambdas and closures. (DONE) Optimze value representation to optionally NaN boxed values. Optimize the garbage collector for incremental collection. Optimize the VM’s loop-dispatch to computed jumps. Add more compiler passes for better optimization. Implementation Vyse runs on the Vyse Virtual Machine (svm for short). The VM has a stack based architechture that operates on 1 byte long opcodes. To keep the implementation concise and simple, vyse uses a single pass compiler that directly consumes tokens and emits bytecode.\nThe stages involved are :\nLexing / Tokenizing (Source string -\u003e Token) The vyse lexer resides in the include/scanner.hpp file, A simple hand written lexer that accepts a string returns a token whenever the method next_token() is called. The Lexer is called from within the Compiler, but can also be instantiated and used stand-alone for testing purposes.\nCompiling (Tokens -\u003e Bytecode) The Compiler compiles tokens to Bytecode following the Vyse Bytecode Instruction format (include/x_opcode.hpp). Every instruction is 1 byte long. The compiler returns a function containing all the bytecode from the script, which is then loaded into the VM and called.\nVyVM The design of the VyVM is very similar to the Lua Virtual Machine despite the fact that it’s Stack based as opposed to LuaVM’s register based design (after version 5.1). It consists of a value stack and an accumulator register. It has full support for lambdas and closures following Lua’s upvalue design.\nBuilding To build vyse from source, it is recommended that you use CMake (version 3.13 or higher). The build tool used here is Ninja, but you can use any other build tool of your preference (eg- 'Unix Makefiles').\nAfter downloading/cloning vyse into a directory, cd into it and run the following commands to run the tests:\nmkdir build cd build cmake .. -G Ninja -DBUILD_TESTS=true -DCMAKE_BUILD_TYPE=Debug -DSTRESS_GC=true -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ ninja ./vy The CMake script accepts some options, namely:\nOption Values Description -DCMAKE_BUILD_TYPE Release/Debug Compilation mode for the C++ compiler. Also enables runtime assertions. -DBUILD_TESTS true/false Whether to build the test suite. -DSTRESS_GC true/false When true, runs the garbage collector whenever possible. Useful for catching GC bugs. -DLOG_GC true/false When true, logs the GC status on every cycle. -DLOG_DISASM true/false When true, dumps the bytecode disassembly of every program after the compiler pass, before running it on the VM Note that -CMAKE_C_COMPILER=clang -CMAKE_CXX_COMPILER=clang++ are optional, and you can use any C++ compiler toolchain of your liking. The aforementioned snippet will build the project in debug mode, which is preferred for development but is much, much slower.\nFor an optimized release build, use:\ncmake .. -G Ninja -DBUILD_TESTS=true -DCMAKE_BUILD_TYPE=Release -DSTRESS_GC=false -DLOG_GC=false -DLOG_DISASM=false Benchmarks The benchmarks for vyuse are present in the benchmark directory. The benchmark/run.py script can be used to compare Vyse against other languages. You can either run all benchmarks, or run specific benchmarks.\nFirst, create and activate a virtual environment:\ncd benchmarks python3 -m venv env source env/bin/activate Then, install all the dependencies inside the virtual environment:\npython3 -m pip install -r requirements.txt To run all benchmarks, enter the following into your shell:\ncd benchmarks python3 run.py To run, a specific benchmark, use the --bench option:\npython3 run.py --bench=fib Tests For testing, the ctest utility is used along with some hand written helper headers. To run existing tests, run ctest inside the build directory (bin or out). Tests of all kinds can be found under the test directory.\n(Note: time is in seconds)\nIf your terminal does not have ASNI support, or you want to pipe the benchmarks to a file for reporting, then you can use the --nocolor flag.\nEditor-Support Currently, syntax highlighting and code completion snippets are supported on the following code editors:\nVS Code Sublime text [In Progress] Vim [Coming soon] Atom [Coming soon] Development If you’re looking to contribute to vyse, It is recommended to have clang-format for formatting and clangd language server for your text editor. On VSCode, the C/C++ extension can be used to debug the executable. Alternatively, you can use GDC/LLDB or other debuggers to your liking.\nThe sources are in src/ while the public headers are in include/. A basic CLI module is present under cli/.\n",
-  "wordCount" : "1303",
+  "articleBody": "Vyse Vyse\rAn elegant and embeddable programming language\rVisit the language spec »\rWebsite »\rReport Bug\r•\rRequest Feature\rCI Status [MIT License](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)\nVyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games. Programmers familiar with Lua/Javascript can pick up the language within an hour. Vyse also comes with a C++ API for frictionless embedding in projects.\nTable of Contents Vyse Table of Contents Goal Overview Roadmap Implementation Lexing / Tokenizing (Source string -\u003e Token) Compiling (Tokens -\u003e Bytecode) VyVM Building Benchmarks Tests Editor-Support Development Goal Vyse aims to pick up after the Lua programming language, by adding popularly desired features on top of it, whilst providing similar speed and minimalism as Lua. There exist some quirks in Lua that Vyse aims to change.\nVariables are global by default\nLong keywords like local and the use of do .. end to designate blocks instead of {} makes it unlikeable to programmers coming from C.\nThe concept of metatables and metamethods is somewhat unintuitive to new programmers.\nTables being used as both arrays and maps can have unwanted side effects.\nLacks many features that are common in other languages such as :\nCompound assignment operators (+=, -=, *=) and decrement and increment operators (++, --) . continue statement for skipping over some loop iterations. switch statements. Arrays starting at 1 is a a minor issue to some.\nVyse aims to keep most of what Lua provides, but address the aforementioned issues and offer the following QoL feautures:\nA Familiar syntax for programmers migrating from Javascript and C An easy to integrate C++ API for easy embedding in applications Syntactic sugar for JS like OOP that boils down to the very same metatable and metamethod heirarchy. Overview Here is a rough overview of the language’s syntax and features:\n-- importing modules is done with the builtin 'import' function const math = import(\"math\") -- variable declaration and assignment const PI = math.pi -- variables declared with const are immutable let radius = 10 -- Function declaration fn calculate_area(r) { return PI * r ** 2 -- '**' operator is used for exponentiation. } let area = calculate_area(radius) -- function calling -- constructing objects is very similar to Javascript. let goblin = { name: \"Bobo\", health: 12, damage: 4, attack(target) { target.health -= this.damage print(\"Goblin attacks!\") }, }; -- methods is done with the `:` operator. let wolf = { health: 20 } goblin:attack(wolf) -- Arrays are intuitive too let numbers = [1, 3, 5, 7, 9] -- the '#' operator returns length of lists or strings. print('I have ' .. #numbers .. 'numbers!') // '..' is the concat operator -- the `\u003c\u003c\u003c` operator can be used to push to arrays numbers \u003c\u003c\u003c 10 \u003c\u003c\u003c 11 -- looping is very similar to lua. for i = 1, #numbers { print(numbers[i]) } -- conditionals math.randseed(time.now()); const number = math.random(0, 100); let guess = input():to_number(); -- read user input and parse as a number while true { if guess \u003c number { print(\"Too low! Try higher\") } else if guess \u003e number { print(\"Too hight! Guess lower\") } else { print(\"You guessed it! The number was \" .. number); break } } For a more complete spec of the language, and all it’s features visit manual.md. Alternatively, read the documentation on this page.\nRoadmap Currently, vyse supports basic control flow, variable declaration, usage and basic collection data structures. To move towards a more complete implementation, the following tasks have to be attended to:\nImplement parent tables (metatables in Lua). (DONE) Add a complete list of collection types (Arrays and tables). (DONE) Implement proper error reporting in all the passes. (DONE) Full support for Lambdas and closures. (DONE) Optimze value representation to optionally NaN boxed values. Optimize the garbage collector for incremental collection. Optimize the VM’s loop-dispatch to computed jumps. Add more compiler passes for better optimization. Implementation Vyse runs on the Vyse Virtual Machine (svm for short). The VM has a stack based architechture that operates on 1 byte long opcodes. To keep the implementation concise and simple, vyse uses a single pass compiler that directly consumes tokens and emits bytecode.\nThe stages involved are :\nLexing / Tokenizing (Source string -\u003e Token) The vyse lexer resides in the include/scanner.hpp file, A simple hand written lexer that accepts a string returns a token whenever the method next_token() is called. The Lexer is called from within the Compiler, but can also be instantiated and used stand-alone for testing purposes.\nCompiling (Tokens -\u003e Bytecode) The Compiler compiles tokens to Bytecode following the Vyse Bytecode Instruction format (include/x_opcode.hpp). Every instruction is 1 byte long. The compiler returns a function containing all the bytecode from the script, which is then loaded into the VM and called.\nVyVM The design of the VyVM is very similar to the Lua Virtual Machine despite the fact that it’s Stack based as opposed to LuaVM’s register based design (after version 5.1). It consists of a value stack and an accumulator register. It has full support for lambdas and closures following Lua’s upvalue design.\nBuilding To build vyse from source, it is recommended that you use CMake (version 3.13 or higher). The build tool used here is Ninja, but you can use any other build tool of your preference (eg- 'Unix Makefiles').\nAfter downloading/cloning vyse into a directory, cd into it and run the following commands to run the tests:\nmkdir build cd build cmake .. -G Ninja -DBUILD_TESTS=true -DCMAKE_BUILD_TYPE=Debug -DSTRESS_GC=true -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ ninja ./vy The CMake script accepts some options, namely:\nOption Values Description -DCMAKE_BUILD_TYPE Release/Debug Compilation mode for the C++ compiler. Also enables runtime assertions. -DBUILD_TESTS true/false Whether to build the test suite. -DSTRESS_GC true/false When true, runs the garbage collector whenever possible. Useful for catching GC bugs. -DLOG_GC true/false When true, logs the GC status on every cycle. -DLOG_DISASM true/false When true, dumps the bytecode disassembly of every program after the compiler pass, before running it on the VM Note that -CMAKE_C_COMPILER=clang -CMAKE_CXX_COMPILER=clang++ are optional, and you can use any C++ compiler toolchain of your liking. The aforementioned snippet will build the project in debug mode, which is preferred for development but is much, much slower.\nFor an optimized release build, use:\ncmake .. -G Ninja -DBUILD_TESTS=true -DCMAKE_BUILD_TYPE=Release -DSTRESS_GC=false -DLOG_GC=false -DLOG_DISASM=false Benchmarks The benchmarks for vyuse are present in the benchmark directory. The benchmark/run.py script can be used to compare Vyse against other languages. You can either run all benchmarks, or run specific benchmarks.\nFirst, create and activate a virtual environment:\ncd benchmarks python3 -m venv env source env/bin/activate Then, install all the dependencies inside the virtual environment:\npython3 -m pip install -r requirements.txt To run all benchmarks, enter the following into your shell:\ncd benchmarks python3 run.py To run, a specific benchmark, use the --bench option:\npython3 run.py --bench=fib Tests For testing, the ctest utility is used along with some hand written helper headers. To run existing tests, run ctest inside the build directory (bin or out). Tests of all kinds can be found under the test directory.\n(Note: time is in seconds)\nIf your terminal does not have ASNI support, or you want to pipe the benchmarks to a file for reporting, then you can use the --nocolor flag.\nEditor-Support Currently, syntax highlighting and code completion snippets are supported on the following code editors:\nVS Code Sublime text [In Progress] Vim [Coming soon] Atom [Coming soon] Development If you’re looking to contribute to vyse, It is recommended to have clang-format for formatting and clangd language server for your text editor. On VSCode, the C/C++ extension can be used to debug the executable. Alternatively, you can use GDC/LLDB or other debuggers to your liking.\nThe sources are in src/ while the public headers are in include/. A basic CLI module is present under cli/.\n",
+  "wordCount" : "1307",
   "inLanguage": "en",
   "datePublished": "2022-06-15T00:00:00Z",
   "dateModified": "2022-06-15T00:00:00Z",
@@ -101,49 +136,12 @@
     }
 
 </script>
-<noscript>
-    <style type="text/css">
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: #1d1e20;
-                --entry: #2e2e33;
-                --primary: rgba(255, 255, 255, 0.84);
-                --secondary: rgba(255, 255, 255, 0.56);
-                --tertiary: rgba(255, 255, 255, 0.16);
-                --content: rgba(255, 255, 255, 0.74);
-                --hljs-bg: #2e2e33;
-                --code-bg: #37383e;
-                --border: #333;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
 
 <header class="header">
     <nav class="nav">
         <div class="logo">
             <a href="https://cbrtl.github.io" accesskey="h" title="cbrtl (Alt + H)">cbrtl</a>
-            <span class="logo-switches">
+            <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -164,7 +162,7 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-            </span>
+            </div>
         </div>
         <ul id="menu">
             <li>
@@ -199,15 +197,17 @@
       vyse
     </h1>
     <div class="post-description">
-      Connecting Help and Transparency
+      Vyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games.
     </div>
-    <div class="post-meta">June 15, 2022&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Srijan Paul&nbsp;|&nbsp;<a href="https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content/posts/vyse.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2022-06-15 00:00:00 +0000 UTC'>June 15, 2022</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Srijan Paul&nbsp;|&nbsp;<a href="https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content/posts/vyse.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
 </div>
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
-            <div class="details">Table of Contents</div>
+            <span class="details">Table of Contents</span>
         </summary>
+
         <div class="inner"><ul>
                 <li>
                     <a href="#vyse" aria-label="Vyse">Vyse</a><ul>
@@ -269,10 +269,8 @@
     <a href="https://github.com/srijan-paul/vyse/issues">Request Feature</a>
   </p>
 </p>
-<p><img loading="lazy" src="https://github.com/srijan-paul/snap/actions/workflows/test.yml/badge.svg" alt="CI Status"  />
-
-<a href="https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs"><img loading="lazy" src="https://img.shields.io/apm/l/atomic-design-ui.svg?" alt="MIT License"  />
-</a></p>
+<p><a href="https://github.com/srijan-paul/snap/actions/workflows/test.yml/badge.svg">CI Status</a>
+[<a href="https://img.shields.io/apm/l/atomic-design-ui.svg?">MIT License</a>](<a href="https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs">https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs</a>)</p>
 <p>Vyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games. Programmers familiar with Lua/Javascript can pick up the language within an hour.
 Vyse also comes with a C++ API for frictionless embedding in projects.</p>
 <h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
@@ -515,7 +513,9 @@ Alternatively, you can use GDC/LLDB or other debuggers to your liking.</p>
 <p>The sources are in <code>src/</code> while the public headers are in <code>include/</code>.
 A basic CLI module is present under <code>cli/</code>.</p>
 
-</div>
+
+  </div>
+
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="https://cbrtl.github.io/tags/project/">project</a></li>
@@ -523,11 +523,12 @@ A basic CLI module is present under <code>cli/</code>.</p>
     </ul>
 <nav class="paginav">
   <a class="next" href="https://cbrtl.github.io/posts/ratenect/">
-    <span class="title">Next Page »</span>
+    <span class="title">Next »</span>
     <br>
     <span>Project: Ratenect</span>
   </a>
 </nav>
+
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share vyse on twitter"
@@ -577,27 +578,28 @@ A basic CLI module is present under <code>cli/</code>.</p>
   </footer>
 </article>
     </main>
-    <footer class="footer">
+    
+<footer class="footer">
     <span>&copy; 2022 <a href="https://cbrtl.github.io">cbrtl</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
-    <button class="top-link" id="top-link" type="button" accesskey="g">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-            <path d="M12 6H0l6-6z" />
-        </svg>
-    </button>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
 </a>
 
 <script>
     let menu = document.getElementById('menu')
-    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-    menu.onscroll = function () {
-        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -651,12 +653,12 @@ A basic CLI module is present under <code>cli/</code>.</p>
 
         const copybutton = document.createElement('button');
         copybutton.classList.add('copy-code');
-        copybutton.innerText = 'copy';
+        copybutton.innerHTML = 'copy';
 
         function copyingDone() {
-            copybutton.innerText = 'copied!';
+            copybutton.innerHTML = 'copied!';
             setTimeout(() => {
-                copybutton.innerText = 'copy';
+                copybutton.innerHTML = 'copy';
             }, 2000);
         }
 

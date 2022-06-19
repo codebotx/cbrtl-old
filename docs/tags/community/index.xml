@@ -16,7 +16,7 @@
       <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://cbrtl.github.io/posts/vyse/</guid>
-      <description>Connecting Help and Transparency</description>
+      <description>Vyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games.</description>
     </item>
     
     <item>
@@ -26,15 +26,6 @@
       
       <guid>https://cbrtl.github.io/posts/ratenect/</guid>
       <description>Connecting Help and Transparency</description>
-    </item>
-    
-    <item>
-      <title>Getting started with cbrtl and FOSS</title>
-      <link>https://cbrtl.github.io/posts/getting-started/</link>
-      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://cbrtl.github.io/posts/getting-started/</guid>
-      <description>Grinding your gears</description>
     </item>
     
     <item>
@@ -53,6 +44,15 @@
       
       <guid>https://cbrtl.github.io/posts/project-showcase/</guid>
       <description>Some things to keep in mind while adding your project</description>
+    </item>
+    
+    <item>
+      <title>Getting started with cbrtl and FOSS</title>
+      <link>https://cbrtl.github.io/posts/getting-started/</link>
+      <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cbrtl.github.io/posts/getting-started/</guid>
+      <description>Grinding your gears</description>
     </item>
     
     <item>
