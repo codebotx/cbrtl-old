@@ -97,68 +97,68 @@ There exist some quirks in Lua that Vyse aims to change.</p>
 </ul>
 <h2 id="overview">Overview</h2>
 <p>Here is a rough overview of the language&rsquo;s syntax and features:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#75715e">-- importing modules is done with the builtin &#39;import&#39; function</span>
-const math <span style="color:#f92672">=</span> import(<span style="color:#e6db74">&#34;math&#34;</span>)
-
-<span style="color:#75715e">--  variable declaration and assignment</span>
-const PI <span style="color:#f92672">=</span> math.pi <span style="color:#75715e">-- variables declared with const are immutable</span>
-let radius <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
-
-<span style="color:#75715e">--  Function declaration</span>
-fn calculate_area(r) {
-  <span style="color:#66d9ef">return</span> PI <span style="color:#f92672">*</span> r <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e">-- &#39;**&#39; operator is used for exponentiation.</span>
-}
-
-let area <span style="color:#f92672">=</span> calculate_area(radius) <span style="color:#75715e">-- function calling</span>
-
-<span style="color:#75715e">--  constructing objects is very similar to Javascript.</span>
-
-let goblin <span style="color:#f92672">=</span> {
-  name: <span style="color:#e6db74">&#34;Bobo&#34;</span>,
-  health: <span style="color:#ae81ff">12</span>,
-  damage: <span style="color:#ae81ff">4</span>,
-  attack(target) {
-    target.health <span style="color:#f92672">-=</span> this.damage
-		print(<span style="color:#e6db74">&#34;Goblin attacks!&#34;</span>)
-  },
-};
-
-<span style="color:#75715e">--  methods is done with the `:` operator.</span>
-let wolf <span style="color:#f92672">=</span> { health: <span style="color:#ae81ff">20</span> }
-goblin:attack(wolf)
-
-<span style="color:#75715e">--  Arrays are intuitive too</span>
-let numbers <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">9</span>]
-
-<span style="color:#75715e">-- the &#39;#&#39; operator returns length of lists or strings.</span>
-print(<span style="color:#e6db74">&#39;I have &#39;</span> <span style="color:#f92672">..</span> <span style="color:#f92672">#</span>numbers <span style="color:#f92672">..</span> <span style="color:#e6db74">&#39;numbers!&#39;</span>) <span style="color:#f92672">//</span> <span style="color:#e6db74">&#39;..&#39;</span> is the concat operator
-
-<span style="color:#75715e">-- the `&lt;&lt;&lt;` operator can be used to push to arrays</span>
-numbers <span style="color:#f92672">&lt;&lt;&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">&lt;&lt;&lt;</span> <span style="color:#ae81ff">11</span>
-
-<span style="color:#75715e">-- looping is very similar to lua.</span>
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#f92672">#</span>numbers  {
-	print(numbers[i])
-}
-
-
-<span style="color:#75715e">--  conditionals</span>
-math.randseed(time.now());
-const number <span style="color:#f92672">=</span> math.random(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>);
-
-let guess <span style="color:#f92672">=</span> input():to_number(); <span style="color:#75715e">-- read user input and parse as a number</span>
-
-<span style="color:#66d9ef">while</span> <span style="color:#66d9ef">true</span> {
-	<span style="color:#66d9ef">if</span> guess <span style="color:#f92672">&lt;</span> number {
-		print(<span style="color:#e6db74">&#34;Too low! Try higher&#34;</span>)
-	} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> guess <span style="color:#f92672">&gt;</span> number {
-		print(<span style="color:#e6db74">&#34;Too hight! Guess lower&#34;</span>)
-	} <span style="color:#66d9ef">else</span> {
-		print(<span style="color:#e6db74">&#34;You guessed it! The number was &#34;</span> <span style="color:#f92672">..</span> number);
-		<span style="color:#66d9ef">break</span>
-	}
-}
-</code></pre></div><p>For a more complete spec of the language, and all it&rsquo;s features visit <a href="./doc/manual.md">manual.md</a>.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#75715e">-- importing modules is done with the builtin &#39;import&#39; function</span>
+</span></span><span style="display:flex;"><span>const math <span style="color:#f92672">=</span> import(<span style="color:#e6db74">&#34;math&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--  variable declaration and assignment</span>
+</span></span><span style="display:flex;"><span>const PI <span style="color:#f92672">=</span> math.pi <span style="color:#75715e">-- variables declared with const are immutable</span>
+</span></span><span style="display:flex;"><span>let radius <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--  Function declaration</span>
+</span></span><span style="display:flex;"><span>fn calculate_area(r) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> PI <span style="color:#f92672">*</span> r <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e">-- &#39;**&#39; operator is used for exponentiation.</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>let area <span style="color:#f92672">=</span> calculate_area(radius) <span style="color:#75715e">-- function calling</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--  constructing objects is very similar to Javascript.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>let goblin <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  name: <span style="color:#e6db74">&#34;Bobo&#34;</span>,
+</span></span><span style="display:flex;"><span>  health: <span style="color:#ae81ff">12</span>,
+</span></span><span style="display:flex;"><span>  damage: <span style="color:#ae81ff">4</span>,
+</span></span><span style="display:flex;"><span>  attack(target) {
+</span></span><span style="display:flex;"><span>    target.health <span style="color:#f92672">-=</span> this.damage
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;Goblin attacks!&#34;</span>)
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--  methods is done with the `:` operator.</span>
+</span></span><span style="display:flex;"><span>let wolf <span style="color:#f92672">=</span> { health: <span style="color:#ae81ff">20</span> }
+</span></span><span style="display:flex;"><span>goblin:attack(wolf)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--  Arrays are intuitive too</span>
+</span></span><span style="display:flex;"><span>let numbers <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">9</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- the &#39;#&#39; operator returns length of lists or strings.</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;I have &#39;</span> <span style="color:#f92672">..</span> <span style="color:#f92672">#</span>numbers <span style="color:#f92672">..</span> <span style="color:#e6db74">&#39;numbers!&#39;</span>) <span style="color:#f92672">//</span> <span style="color:#e6db74">&#39;..&#39;</span> is the concat operator
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- the `&lt;&lt;&lt;` operator can be used to push to arrays</span>
+</span></span><span style="display:flex;"><span>numbers <span style="color:#f92672">&lt;&lt;&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">&lt;&lt;&lt;</span> <span style="color:#ae81ff">11</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- looping is very similar to lua.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#f92672">#</span>numbers  {
+</span></span><span style="display:flex;"><span>	print(numbers[i])
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--  conditionals</span>
+</span></span><span style="display:flex;"><span>math.randseed(time.now());
+</span></span><span style="display:flex;"><span>const number <span style="color:#f92672">=</span> math.random(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>let guess <span style="color:#f92672">=</span> input():to_number(); <span style="color:#75715e">-- read user input and parse as a number</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#66d9ef">true</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> guess <span style="color:#f92672">&lt;</span> number {
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;Too low! Try higher&#34;</span>)
+</span></span><span style="display:flex;"><span>	} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> guess <span style="color:#f92672">&gt;</span> number {
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;Too hight! Guess lower&#34;</span>)
+</span></span><span style="display:flex;"><span>	} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;You guessed it! The number was &#34;</span> <span style="color:#f92672">..</span> number);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>For a more complete spec of the language, and all it&rsquo;s features visit <a href="./doc/manual.md">manual.md</a>.
 Alternatively, read the documentation on <a href="https://srijan-paul.github.io/vyse/book/">this</a> page.</p>
 <h2 id="roadmap">Roadmap</h2>
 <p>Currently, vyse supports basic control flow, variable declaration, usage and basic collection data structures.
@@ -192,12 +192,12 @@ It has full support for lambdas and closures following Lua&rsquo;s upvalue desig
 <p>To build vyse from source, it is recommended that you use CMake (version 3.13 or higher).
 The build tool used here is Ninja, but you can use any other build tool of your preference (eg- <code>'Unix Makefiles'</code>).</p>
 <p>After downloading/cloning vyse into a directory, <code>cd</code> into it and run the following commands to run the tests:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir build
-cd build
-cmake .. -G Ninja -DBUILD_TESTS<span style="color:#f92672">=</span>true -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Debug -DSTRESS_GC<span style="color:#f92672">=</span>true -DCMAKE_EXPORT_COMPILE_COMMANDS<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> -DCMAKE_C_COMPILER<span style="color:#f92672">=</span>clang -DCMAKE_CXX_COMPILER<span style="color:#f92672">=</span>clang++
-ninja
-./vy &lt;filename&gt;
-</code></pre></div><p>The CMake script accepts some options, namely:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir build
+</span></span><span style="display:flex;"><span>cd build
+</span></span><span style="display:flex;"><span>cmake .. -G Ninja -DBUILD_TESTS<span style="color:#f92672">=</span>true -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Debug -DSTRESS_GC<span style="color:#f92672">=</span>true -DCMAKE_EXPORT_COMPILE_COMMANDS<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> -DCMAKE_C_COMPILER<span style="color:#f92672">=</span>clang -DCMAKE_CXX_COMPILER<span style="color:#f92672">=</span>clang++
+</span></span><span style="display:flex;"><span>ninja
+</span></span><span style="display:flex;"><span>./vy &lt;filename&gt;
+</span></span></code></pre></div><p>The CMake script accepts some options, namely:</p>
 <table>
 <thead>
 <tr>
@@ -237,23 +237,23 @@ ninja
 <p>Note that <code>-CMAKE_C_COMPILER=clang -CMAKE_CXX_COMPILER=clang++</code> are optional, and you can use any C++ compiler toolchain of your liking.
 The aforementioned snippet will build the project in debug mode, which is preferred for development but is much, much slower.</p>
 <p>For an optimized release build, use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cmake .. -G Ninja -DBUILD_TESTS<span style="color:#f92672">=</span>true -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Release -DSTRESS_GC<span style="color:#f92672">=</span>false -DLOG_GC<span style="color:#f92672">=</span>false -DLOG_DISASM<span style="color:#f92672">=</span>false
-</code></pre></div><h1 id="benchmarks">Benchmarks</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cmake .. -G Ninja -DBUILD_TESTS<span style="color:#f92672">=</span>true -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Release -DSTRESS_GC<span style="color:#f92672">=</span>false -DLOG_GC<span style="color:#f92672">=</span>false -DLOG_DISASM<span style="color:#f92672">=</span>false
+</span></span></code></pre></div><h1 id="benchmarks">Benchmarks</h1>
 <p>The benchmarks for vyuse are present in the <code>benchmark</code> directory.
 The <code>benchmark/run.py</code> script can be used to compare Vyse against other languages.
 You can either run all benchmarks, or run specific benchmarks.</p>
 <p>First, create and activate a virtual environment:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd benchmarks
-python3 -m venv env
-source env/bin/activate
-</code></pre></div><p>Then, install all the dependencies inside the virtual environment:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python3 -m pip install -r requirements.txt
-</code></pre></div><p>To run all benchmarks, enter the following into your shell:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd benchmarks
-python3 run.py
-</code></pre></div><p>To run, a specific benchmark, use the <code>--bench</code> option:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python3 run.py --bench<span style="color:#f92672">=</span>fib
-</code></pre></div><h1 id="tests">Tests</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd benchmarks
+</span></span><span style="display:flex;"><span>python3 -m venv env
+</span></span><span style="display:flex;"><span>source env/bin/activate
+</span></span></code></pre></div><p>Then, install all the dependencies inside the virtual environment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>python3 -m pip install -r requirements.txt
+</span></span></code></pre></div><p>To run all benchmarks, enter the following into your shell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd benchmarks
+</span></span><span style="display:flex;"><span>python3 run.py
+</span></span></code></pre></div><p>To run, a specific benchmark, use the <code>--bench</code> option:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>python3 run.py --bench<span style="color:#f92672">=</span>fib
+</span></span></code></pre></div><h1 id="tests">Tests</h1>
 <p>For testing, the <code>ctest</code> utility is used along with some hand written helper headers.
 To run existing tests, run <code>ctest</code> inside the build directory (<code>bin</code> or <code>out</code>).
 Tests of all kinds can be found under the <code>test</code> directory.</p>
