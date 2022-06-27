@@ -5,7 +5,185 @@
     <link>https://cbrtl.github.io/tags/project/</link>
     <description>Recent content in project on cbrtl</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 15 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cbrtl.github.io/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cbrtl.github.io/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>zuzu</title>
+      <link>https://cbrtl.github.io/posts/zuzu/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://cbrtl.github.io/posts/zuzu/</guid>
+      <description>Zuzu converts all your markdown files into static htmls pages to be rendered quickly. It uses Github falvoured Markdown CSS and highlight js to beautify code snippets.</description>
+      <content:encoded><![CDATA[<h1 id="zuzu">Zuzu</h1>
+<blockquote>
+<p>Static Site Generator</p>
+</blockquote>
+<h3 id="zuzu-is-a-minimal-static-site-generator">Zuzu is a minimal static site generator.</h3>
+<p>Zuzu converts all your markdown files into static htmls pages to be rendered quickly. It uses Github falvoured Markdown CSS and highlight js to beautify code snippets. <a href="https://anubhavp.me/blog">This blog</a>, for example, has been written using this generator. This enables noobs like me to write blogs without having to learn a lot of code! It is a very simple and easy to use generator. All you need to do is to write a markdown file and it will be rendered as a page ;) You can create a new page by creating a new markdown file.</p>
+<h2 id="how-does-it-work-">How does it work ?</h2>
+<p>Zuzu parses the markdown file using <em>javascript</em> and renders it as <em>html documents</em>. It then saves the html files in the <code>public</code> folder. The public folder, with <code>index.html</code> file, is the final output of the generator and this can be deployed and hosted in various platforms. This particular blog has been deployed on <a href="https://anubhavp.me/blog/">Github Pages</a>.</p>
+<h3 id="1-create-a-markdown-file">1. Create a markdown file</h3>
+<pre><code># This is a title
+This is a paragraph
+This is another paragraph
+This is a list:
+* Item 1
+* Item 2
+* Item 3
+This is a code block:
+```
+print(&quot;Hello World&quot;)
+```
+This is a table:
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| 1        | 2        | 3        |
+| 4        | 5        | 6        |
+| 7        | 8        | 9        |
+This is a link: [zuzu](https://anubhavp.me/blog/zuzu.html)
+</code></pre>
+<h3 id="2-run-the-generator-and-find-your-blog">2. Run the generator and find your blog</h3>
+<p>Run <code>npm run generate</code> in the console.
+You&rsquo;ll now see the blog in the public folder! Run the index.html file in your browser to see your blog. You may now deploy your site
+to a server.</p>
+<h2 id="the-static-site-generator">The Static Site Generator</h2>
+<h3 id="1-libraries-used">1. Libraries used</h3>
+<ul>
+<li><a href="https://www.npmjs.com/package/markdown-it">MarkdownIt</a> <em>Markdown parser done right.</em></li>
+<li><a href="https://www.npmjs.com/package/markdown-it-anchor">MarkdownItAnchor</a> <em>Header anchors for markdown-it.</em></li>
+<li><a href="https://www.npmjs.com/package/glob">Glob</a> <em>&ldquo;Globs&rdquo; are the patterns you type when you do stuff like ls .js on the command line, or put build/ in a .gitignore file.</em></li>
+<li><a href="https://www.npmjs.com/package/gray-matter">Gray-Matter</a> <em>Parse front-matter from a string or file.</em></li>
+<li><a href="https://npmjs.com/package/mkdirp">Mkdirp</a> <em>Create Dirs if they do not exist.</em></li>
+</ul>
+<h3 id="2-workflow">2. Workflow</h3>
+<p>This is the code for the generator.js.
+The code works in the following way:</p>
+<ol>
+<li><code>fs.readfile() from fs</code> reads all the files from the said directory and stores then in <code>filename</code> using <code>glob</code>. It is a <code>glob</code> that matches all the files in the directory. The <code>file system</code> module allows you to work with the file system on your computer.</li>
+<li><code>gray-matter</code> helps extracting front matter from the a string or file.
+Converts a string with front-matter, like this:</li>
+</ol>
+<pre tabindex="0"><code>    title: Hello
+    slug: home
+    ---
+    &lt;h1&gt;Hello world!&lt;/h1&gt;
+</code></pre><p>Into an object like this:</p>
+<pre><code>{
+content: '&lt;h1&gt;Hello world!&lt;/h1&gt;',
+data: { 
+    title: 'Hello', 
+    slug: 'home' 
+}
+}
+</code></pre>
+<p>It then extracts the front matter and stores it in <code>data</code>. It then stores the content in <code>content</code> and returns the <code>filename</code> to the <code>main()</code> function. It then repeats the process for all the files in the directory.</p>
+<ol start="3">
+<li>
+<p>The <code>main()</code> function then takes in one <code>filename</code> at a time and then parses it through <code>markdownit( ,{markdownitanchor})</code>. <code>markdownit</code> parses the file and converts the markdown content into HTML files. It then creates a <code>html</code> file and writes the parsed content into it. It then saves the <code>html</code> file in the <code>public</code> folder. This process repeats for all the files in the directory.</p>
+</li>
+<li>
+<p>The converted html files are stored in the specified directories then using <code>mkdirp</code>. The <code>index.html</code> file isalready present in the <code>public</code> folder. <code>mkdirp</code> creates the directories if they do not exist.</p>
+</li>
+</ol>
+<h3 id="3-generator-code">3. Generator Code</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">fs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;fs&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">glob</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;glob&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">matter</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;gray-matter&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">mkdirp</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;mkdirp&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">path</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;path&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">hljs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;highlight.js&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">MarkdownIt</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;markdown-it&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">markdownItAnchor</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;markdown-it-anchor&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">string</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;string&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">slugify</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">s</span> =&gt; <span style="color:#a6e22e">string</span>(<span style="color:#a6e22e">s</span>).<span style="color:#a6e22e">slugify</span>().<span style="color:#a6e22e">toString</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">md</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MarkdownIt</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">html</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">linkify</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">typographer</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">highlight</span>(<span style="color:#a6e22e">str</span>, <span style="color:#a6e22e">language</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">language</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">hljs</span>.<span style="color:#a6e22e">getLanguage</span>(<span style="color:#a6e22e">language</span>)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">hljs</span>.<span style="color:#a6e22e">highlight</span>(<span style="color:#a6e22e">str</span>, { <span style="color:#a6e22e">language</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">language</span> }).<span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">markdownItAnchor</span>, { <span style="color:#a6e22e">slugify</span> });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">readFile</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">filename</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rawFile</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFileSync</span>(<span style="color:#a6e22e">filename</span>, <span style="color:#e6db74">&#39;utf8&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">parsed</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">matter</span>(<span style="color:#a6e22e">rawFile</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">html</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">md</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">parsed</span>.<span style="color:#a6e22e">content</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {...<span style="color:#a6e22e">parsed</span>, <span style="color:#a6e22e">html</span> }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">templatize</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">template</span>, { <span style="color:#a6e22e">date</span>, <span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">content</span>, <span style="color:#a6e22e">author</span> }) =&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">template</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&lt;!-- PUBLISH_DATE --&gt;/g</span>, <span style="color:#a6e22e">date</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&lt;!-- TITLE --&gt;/g</span>, <span style="color:#a6e22e">title</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&lt;!-- CONTENT --&gt;/g</span>, <span style="color:#a6e22e">content</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&lt;!-- AUTHOR --&gt;/g</span>, <span style="color:#a6e22e">author</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">saveFile</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">filename</span>, <span style="color:#a6e22e">contents</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">dirname</span>(<span style="color:#a6e22e">filename</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">mkdirp</span>.<span style="color:#a6e22e">sync</span>(<span style="color:#a6e22e">dir</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">writeFileSync</span>(<span style="color:#a6e22e">filename</span>, <span style="color:#a6e22e">contents</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getOutputFilename</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">filename</span>, <span style="color:#a6e22e">outPath</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">basename</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">basename</span>(<span style="color:#a6e22e">filename</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newfilename</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">basename</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">basename</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;.html&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">outfile</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">outPath</span>, <span style="color:#a6e22e">newfilename</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">outfile</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">processFile</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">filename</span>, <span style="color:#a6e22e">template</span>, <span style="color:#a6e22e">outPath</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">file</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">readFile</span>(<span style="color:#a6e22e">filename</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">outfilename</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getOutputFilename</span>(<span style="color:#a6e22e">filename</span>, <span style="color:#a6e22e">outPath</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">templatized</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">templatize</span>(<span style="color:#a6e22e">template</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">date</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">title</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">html</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">author</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">author</span>,
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">saveFile</span>(<span style="color:#a6e22e">outfilename</span>, <span style="color:#a6e22e">templatized</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`📝 </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">outfilename</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">main</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">srcPath</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;content&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">outPath</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;public&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">template</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFileSync</span>(<span style="color:#e6db74">&#39;./templates/initial/template.html&#39;</span>, <span style="color:#e6db74">&#39;utf8&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">filenames</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">glob</span>.<span style="color:#a6e22e">sync</span>(<span style="color:#a6e22e">srcPath</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/**/*.md&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">filenames</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">filename</span>) =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">processFile</span>(<span style="color:#a6e22e">filename</span>, <span style="color:#a6e22e">template</span>, <span style="color:#a6e22e">outPath</span>)
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">main</span>()
+</span></span></code></pre></div><h2 id="get-started-with-zuzu">Get started with zuzu</h2>
+<p>Fork and clone this repo.
+Add your markdown files in the content folder, run <code>npm run generate</code> and find beautifully rendered html files in the public folder :)</p>
+<h2 id="to-do">To-do</h2>
+<ul>
+<li>Add a proper template file in the initial folder with index.html and respective assets.</li>
+<li>Create an executable for zuzu.</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>vyse</title>
       <link>https://cbrtl.github.io/posts/vyse/</link>
