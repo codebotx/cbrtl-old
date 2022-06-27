@@ -106,7 +106,7 @@ If you want to showcase your project on our github org, then reach out to us on 
       <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://cbrtl.github.io/posts/zuzu/</guid>
-      <description>Zuzu converts all your markdown files into static htmls pages to be rendered quickly. It uses Github falvoured Markdown CSS and highlight js to beautify code snippets.</description>
+      <description>Zuzu is a static site generator that converts all your markdown files into static htmls pages. It uses Github falvoured Markdown CSS and highlight js to beautify code snippets.</description>
       <content:encoded><![CDATA[<h1 id="zuzu">Zuzu</h1>
 <blockquote>
 <p>Static Site Generator</p>

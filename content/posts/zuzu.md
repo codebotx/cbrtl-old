@@ -2,7 +2,7 @@
 author: "Anubhab Patnaik"
 title: "zuzu"
 date: "2022-06-27"
-description: "Zuzu converts all your markdown files into static htmls pages to be rendered quickly. It uses Github falvoured Markdown CSS and highlight js to beautify code snippets."
+description: "Zuzu is a static site generator that converts all your markdown files into static htmls pages. It uses Github falvoured Markdown CSS and highlight js to beautify code snippets."
 tags: ["project", "community"]
 ShowBreadCrumbs: true 
 ---
